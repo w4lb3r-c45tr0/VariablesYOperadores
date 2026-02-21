@@ -1,0 +1,117 @@
+package VariablesOperadores;
+
+import java.util.Scanner;
+
+public class VariablesOperadores {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        // 1️ DECLARACIÓN Y USO DE VARIABLES
+        System.out.println("DECLARACIÓN DE VARIABLE");
+
+        System.out.print("Ingrese un número entero: ");
+        int numeroEntero = entrada.nextInt();
+
+        System.out.print("Ingrese un número decimal: ");
+        double numeroDecimal = entrada.nextDouble();
+
+        entrada.nextLine(); // limpiar buffer
+
+        System.out.print("Ingrese su nombre: ");
+        String nombreUsuario = entrada.nextLine();
+
+        System.out.print("Ingrese true o false: ");
+        boolean valorBooleano = entrada.nextBoolean();
+
+        System.out.println("Valores ingresados:");
+        System.out.println(numeroEntero);
+        System.out.println(numeroDecimal);
+        System.out.println(nombreUsuario);
+        System.out.println(valorBooleano);
+
+        // 2️ OPERACIONES MATEMÁTICAS
+        System.out.println("\n  OPERACIONES MATEMÁTICAS");
+
+        System.out.print("Ingrese primer número: ");
+        int num1 = entrada.nextInt();
+
+        System.out.print("Ingrese segundo número: ");
+        int num2 = entrada.nextInt();
+
+        System.out.println("Suma: " + (num1 + num2));
+        System.out.println("Resta: " + (num1 - num2));
+        System.out.println("Multiplicación: " + (num1 * num2));
+        System.out.println("División: " + (num1 / num2));
+
+        // 3️ OPERACIONES LÓGICAS
+        System.out.println("\n=== OPERACIONES LÓGICAS ===");
+
+        System.out.print("Ingrese un número: ");
+        int a = entrada.nextInt();
+
+        System.out.print("Ingrese otro número: ");
+        int b = entrada.nextInt();
+
+        System.out.println("¿a > b? " + (a > b));
+        System.out.println("¿a < b? " + (a < b));
+        System.out.println("¿a == b? " + (a == b));
+        System.out.println("¿a > 0 && b > 0? " + (a > 0 && b > 0));
+        System.out.println("¿a > 0 || b > 0? " + (a > 0 || b > 0));
+
+        // 4️ CLASIFICACIÓN DE EDAD
+        System.out.println("\n CLASIFICACIÓN DE EDAD");
+
+        System.out.print("Ingrese su edad: ");
+        int edad = entrada.nextInt();
+
+        if (edad < 12) {
+            System.out.println("Niño");
+        } else if (edad <= 17) {
+            System.out.println("Adolescente");
+        } else if (edad <= 59) {
+            System.out.println("Adulto");
+        } else {
+            System.out.println("Adulto mayor");
+        }
+
+        // 5️ DÍA DE LA SEMANA
+        System.out.println("\n=== DÍA DE LA SEMANA ===");
+
+        System.out.print("Ingrese un número del 1 al 7: ");
+        int dia = entrada.nextInt();
+
+        switch (dia) {
+            case 1: System.out.println("Lunes"); break;
+            case 2: System.out.println("Martes"); break;
+            case 3: System.out.println("Miércoles"); break;
+            case 4: System.out.println("Jueves"); break;
+            case 5: System.out.println("Viernes"); break;
+            case 6: System.out.println("Sábado"); break;
+            case 7: System.out.println("Domingo"); break;
+            default: System.out.println("Número inválido");
+        }
+
+        // 6️ VERIFICACIÓN DE ACCESO
+        System.out.println("\n=== INICIO DE SESIÓN ===");
+
+        entrada.nextLine(); // limpiar buffer
+
+        System.out.print("Usuario: ");
+        String usuario = entrada.nextLine();
+
+        System.out.print("Contraseña: ");
+        String contraseña = entrada.nextLine();
+
+        if (usuario.equals("admin") && contraseña.equals("1234")) {
+            System.out.println("Acceso concedido");
+        } else if (usuario.equals("admin")) {
+            System.out.println("Contraseña incorrecta");
+        } else {
+            System.out.println("Usuario no registrado");
+        }
+
+        entrada.close();
+    }
+}
